@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.0</version>
+		<version>4.0.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
@@ -15,7 +15,10 @@
 	<description>Demo project for Spring Boot, Spring Data R2DBC, and MariaDB</description>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>17</java.version>
+		<mapstruct.version>1.6.3</mapstruct.version><!-- check the latest version on the Maven repository -->
+		<maven-compiler-plugin.version>3.12.1</maven-compiler-plugin.version>
+		<testcontainers.version>2.0.5</testcontainers.version><!-- check the latest version on the Maven repository -->
 	</properties>
 
 	<dependencies>
@@ -30,7 +33,7 @@
 		<dependency>
 			<groupId>org.mariadb</groupId>
 			<artifactId>r2dbc-mariadb</artifactId>
-			<version>0.8.4-rc</version>
+			<version>1.4.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -47,8 +50,39 @@
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- MariaDB JDBC driver (needed by Testcontainers for container health check) -->
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-testcontainers</artifactId>
+			<scope>test</scope>
+		</dependency>		
+	    <dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>testcontainers-junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>testcontainers-mariadb</artifactId>
+			<scope>test</scope>
+		</dependency>	
 	</dependencies>
-
+    <dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.testcontainers</groupId>
+				<artifactId>testcontainers-bom</artifactId>
+				<version>${testcontainers.version}</version> 
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<build>
 		<plugins>
 			<plugin>
