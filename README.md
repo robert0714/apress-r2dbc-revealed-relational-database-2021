@@ -14,3 +14,9 @@ Release v1.0 corresponds to the code in the published book, without corrections 
 ## Contributions
 
 See the file Contributing.md for more information on how you can contribute to this repository.
+
+## Rerferences
+1. https://github.com/hantsy/spring-r2dbc-sample
+2. https://github.com/Azure-Samples/quickstart-spring-data-r2dbc-postgresql
+3. https://github.com/ivangfr/spring-webflux-reactive-databases
+4. https://github.com/bezkoder/spring-boot-r2dbc-mysql-example

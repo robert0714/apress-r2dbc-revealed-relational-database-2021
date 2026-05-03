@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>4.0.5</version>
+		<version>4.0.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
@@ -16,6 +16,10 @@
 
 	<properties>
 		<java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <file.encoding>UTF-8</file.encoding>
 		<mapstruct.version>1.6.3</mapstruct.version><!-- check the latest version on the Maven repository -->
 		<maven-compiler-plugin.version>3.12.1</maven-compiler-plugin.version>
 		<testcontainers.version>2.0.5</testcontainers.version><!-- check the latest version on the Maven repository -->
